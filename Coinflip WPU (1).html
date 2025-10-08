@@ -5,7 +5,7 @@
   <title>Coinflip</title>
   <style>
     body {
-      background-color: lightgray;
+      background-color: linear-gradient(to bottom,pink,white);
       font-family: Arial;
       text-align: center;
       margin-top: 100px;
@@ -17,7 +17,7 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background-color: gold;
+      background-color: silver;
       line-height: 100px;
       margin: 20px auto;
       font-size: 20px;
@@ -52,13 +52,14 @@
   <div id="coin" class="coin">?</div>
   <button onclick="flipCoin()">Münze werfen</button>
   <div id="result">Bereit?</div>
-  <footer>Erstellt von Jonas</footer>
+  <footer>Erstellt von Jonas Winter</footer>
   <script>
     function flipCoin() {
       var coin = document.getElementById("coin");
       var result = document.getElementById("result");
       coin.classList.add("flip");
       setTimeout(function() {
+        <!--auch wenn der Orginalmünzwurf natürlich nicht 50/50 ist sondern Geometrisch verteilt :) -->
         var side = Math.random() < 0.5 ? "Kopf" : "Zahl";
         coin.textContent = side;
         result.textContent = "Die Münze zeigt: " + side + "!";
