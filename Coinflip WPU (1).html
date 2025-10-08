@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Coinflip</title>
+  <style>
+    body {
+      background-color: lightgray;
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      color: black;
+    }
+    .coin {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: gold;
+      line-height: 100px;
+      margin: 20px auto;
+      font-size: 20px;
+      font-weight: bold;
+      transition: transform 0.8s;
+    }
+    .flip {
+      transform: rotateY(720deg);
+    }
+    button {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>🪙 Coinflip</h1>
+  <div id="coin" class="coin">?</div>
+  <button onclick="flipCoin()">Münze werfen</button>
+  <div id="result">Bereit?</div>
+  <footer>Erstellt von Jonas</footer>
+  <script>
+    function flipCoin() {
+      var coin = document.getElementById("coin");
+      var result = document.getElementById("result");
+      coin.classList.add("flip");
+      setTimeout(function() {
+        var side = Math.random() < 0.5 ? "Kopf" : "Zahl";
+        coin.textContent = side;
+        result.textContent = "Die Münze zeigt: " + side + "!";
+        coin.classList.remove("flip");
+      }, 800);
+    }
+  </script>
+</body>
+</html>
