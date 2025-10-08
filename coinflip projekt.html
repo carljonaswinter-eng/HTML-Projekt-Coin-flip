@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coinflip</title>
+<style>
+body{background-color:#f0f0f0;font-family:Arial,sans-serif;text-align:center;margin-top:100px}
+h1{color:#333}
+.coin{width:100px;height:100px;border-radius:50%;background:gold;display:flex;justify-content:center;align-items:center;font-size:20px;margin:30px auto;box-shadow:0 0 10px rgba(0,0,0,0.3);transition:transform 1s}
+.flip{transform:rotateY(720deg)}
+button{background-color:#0077cc;color:white;border:none;padding:10px 20px;font-size:16px;border-radius:5px;cursor:pointer}
+button:hover{background-color:#005fa3}
+#result{margin-top:20px;font-size:22px;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>🪙 Coinflip</h1>
+<div class="coin" id="coin">?</div>
+<button onclick="flipCoin()">Münze werfen</button>
+<div id="result">Bereit?</div>
+<script>
+function flipCoin(){var c=document.getElementById("coin"),r=document.getElementById("result");c.classList.add("flip");setTimeout(function(){var s=Math.random()<.5?"Kopf":"Zahl";c.textContent=s;r.textContent="Die Münze zeigt: "+s+"!";c.classList.remove("flip")},1e3)}
+</script>
+</body>
+</html>
